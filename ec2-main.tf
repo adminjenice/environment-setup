@@ -100,7 +100,6 @@ resource "aws_route_table_association" "dml-rta-public-subent-02" {
                 sudo systemctl start php-fpm && sudo systemctl enable php-fpm
                 sudo systemctl start mariadb && sudo systemctl enable mariadb
                 sudo useradd wp-user
-                sudo echo "wpuser" | passwd --stdin wp-user
                 sudo usermod -aG apache wp-user
                 sudo  sudo wget -P /var/www/html/ https://wordpress.org/latest.tar.gz
                 cd /var/www/html
